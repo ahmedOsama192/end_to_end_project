@@ -41,6 +41,16 @@ class ConfigurationManager:
         create_directories([data_validation_config.root_dir])
 
         return data_validation_config
+
+    def get_data_transformation_config(self):
+        data_transformation_config = DataTransformationConfig(
+            root_dir=self.config.data_transformation.root_dir,
+            data_path=self.config.data_ingestion.unzip_dir
+        )
+
+        create_directories([data_transformation_config.root_dir])
+
+        return data_transformation_config
     
 
 
