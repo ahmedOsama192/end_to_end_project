@@ -4,7 +4,8 @@ from src import logger
 from src.ml_project.pipeline.data_ingestor import DataIngestionPipeline
 from src.ml_project.pipeline.data_validation import DataValidationPipeline
 from src.ml_project.pipeline.data_transformer import DataTransformationPipeline
-
+from src.ml_project.pipeline.training_pipeline import ModelTrainingPipeline
+from src.ml_project.pipeline.model_evaluation import ModelEvaluationPipeline
 
 
 if __name__ == "__main__":
@@ -41,4 +42,26 @@ if __name__ == "__main__":
         logger.info(f">>>>>>>>>>>>> {stage_name} completed successfully")
     except Exception as e:
         logger.exception(f">>>>>>>>>>>>> {stage_name} failed with error: {e}")
+        raise e
+    
+    STAGE_NAME = "Model Training"
+    try : 
+        logger.info(f">>>>>>>>>>>>> {STAGE_NAME} started <<<<<<<<<<<<<<<")
+        model_training_pipeline = ModelTrainingPipeline()
+        model_training_pipeline.main()
+        logger.info(f">>>>>>>>>>>>> {STAGE_NAME} completed successfully")
+
+    except Exception as e:
+        logger.exception(f">>>>>>>>>>>>> {STAGE_NAME} failed with error: {e}")
+        raise e
+    
+    STAGE_NAME = "Model Evaluation"
+    try:
+        logger.info(f">>>>>>>>>>>>> {STAGE_NAME} started <<<<<<<<<<<<<<<")
+        model_evaluation_pipeline = ModelEvaluationPipeline()
+        model_evaluation_pipeline.main()
+        logger.info(f">>>>>>>>>>>>> {STAGE_NAME} completed successfully")
+    
+    except Exception as e:
+        logger.exception(f">>>>>>>>>>>>> {STAGE_NAME} failed with error: {e}")
         raise e

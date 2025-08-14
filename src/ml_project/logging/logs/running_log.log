@@ -2,3 +2,10 @@
 [2025-08-12 15:22:40,221 - INFO - main - Logging setup complete. Logger is ready to use.]
 [2025-08-12 15:24:12,312 - INFO - main - Logging setup complete. Logger is ready to use.]
 [2025-08-12 15:24:36,474 - INFO - main - Logging setup complete. Logger is ready to use.]
+[2025-08-14 13:47:18,148 - INFO - _internal - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000]
+[2025-08-14 13:47:18,148 - INFO - _internal - [33mPress CTRL+C to quit[0m]
+[2025-08-14 13:51:27,569 - INFO - _internal - 127.0.0.1 - - [14/Aug/2025 13:51:27] "GET / HTTP/1.1" 200 -]
+[2025-08-14 13:51:28,329 - INFO - _internal - 127.0.0.1 - - [14/Aug/2025 13:51:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
